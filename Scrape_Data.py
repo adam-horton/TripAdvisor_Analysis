@@ -4,6 +4,7 @@ from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
 import pandas as pd
 
+#A function for scraping data from tripadvisor
 def scrapeData(linkFront, linkBack, rangeLow, rangeHigh, name):
     #initialize webdriver
     chromeOptions = Options()
@@ -205,5 +206,15 @@ def scrapeData(linkFront, linkBack, rangeLow, rangeHigh, name):
 
     driver.quit()
 
-if __name__ == "__main__":
-    scrapeData('https://tripadvisor.com/Airline_Review-d8729156-Reviews-or', '-Southwest-Airlines', 5, 10, 'tester')
+
+#A function for concatening data spreadsheets
+def concatenate(name, sheets):    
+    frames = []
+
+    for x in range(0, len(sheets)):
+        frames.append(pd.read_excel(sheets[x], usecols = 'B:R'))
+
+    merger = pd.concat(frames, ignore_index=True)
+
+    merger.to_excel(name)
+

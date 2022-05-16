@@ -253,8 +253,3 @@ def Run_Analysis(data_set, num_reviews, num_clusters, sentences_per_cluster=1, W
     print(df)
 
     return df
-            
-
-if __name__ == "__main__":
-    Run_Analysis('Data_Sets/Southwest_2-15.xlsx', 20, 5, sentences_per_cluster=2)
-
