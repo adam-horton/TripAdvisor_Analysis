@@ -200,7 +200,7 @@ def scrapeData(linkFront, linkBack, rangeLow, rangeHigh, name):
                     extraInfoList.append('?')
                     
 
-    tempName = name + str(rangeLow) + '-' + str(rangeHigh) + '.xlsx'
+    tempName = name + '.xlsx'
     dataFrame = pd.DataFrame(tableDict)
     dataFrame.to_excel(tempName)
 
