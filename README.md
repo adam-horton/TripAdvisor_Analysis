@@ -29,7 +29,7 @@ Clone this repo and ensure that all dependencies are installed.
 * selenium 4.0.0
 * sentence-transformers 2.2.0
 
-The appropriate chromedriver (https://chromedriver.chromium.org/downloads) must be downloaded and configured in the PATH
+The appropriate chromedriver (https://chromedriver.chromium.org/downloads) must be downloaded and configured in the PATH.
 This page (https://www.selenium.dev/documentation/webdriver/getting_started/install_drivers/) can be useful for setting up the chromedriver
 
 You should now be able to run the modules in your Python environment
