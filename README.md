@@ -39,7 +39,7 @@ You should now be able to run the modules in your Python environment
 ### Scrape_Data
 
 #### scrapeData
-The scrapeData function is used to scrape reviews off of the TripAdvisor website and store the data in an Excel Spreadsheet. All TripAdvisor links follow the standard form "https://tripadvisor.com\<Something\>-or\<number\>-\<Comapany\>". 
+The scrapeData function is used to scrape reviews off of the TripAdvisor website and store the data in an Excel Spreadsheet. All TripAdvisor links follow the standard form "https://tripadvisor.com<Something\>-or\<number\>-\<Comapany\>". 
 
 ##### Parameters
 * linkFront is a string including the beginning of the link including the "or"
