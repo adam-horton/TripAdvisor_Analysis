@@ -39,16 +39,16 @@ You should now be able to run the modules in your Python environment
 ### Scrape_Data
 
 #### scrapeData
-The scrapeData function is used to scrape reviews off of the TripAdvisor website and store the data in an Excel Spreadsheet. All TripAdvisor links follow the standard form "https://tripadvisor.com/<Something>-or<number>-<Comapany>". 
+The scrapeData function is used to scrape reviews off of the TripAdvisor website and store the data in an Excel Spreadsheet. All TripAdvisor links follow the standard form "https://tripadvisor.com\<Something\>-or\<number\>-\<Comapany\>". 
 
 ##### Parameters
-* linkFront is a string including the beginning of the link up until the "or"
-* linkBack is a string including the end of the review including "-<Company>"
+* linkFront is a string including the beginning of the link including the "or"
+* linkBack is a string including the end of the review including "-\<Company\>"
 * rangeLow is an int corresponding to the first review that you want begin to scrape (must be a multiple of 5 and at least 5)
 * rangeHigh is an int corresponding to the last review that you want to scrape (must be a multiple of 5 and at least 5)
-* name is the name of your excel file
+* name is the name of the Excel file that is created
 
-Should the driver fail during the scraping process, the review data will be automatically saved to an excel file and the process will be terminated
+Should the driver fail during the scraping process, the review data will be automatically saved to an Excel file and the process will be terminated
 
 #### concatenate
 The concatenate function merges two review data spreadsheets (Useful if scraping process terminated prematurely).
@@ -58,7 +58,7 @@ The concatenate function merges two review data spreadsheets (Useful if scraping
 * sheets is a list of Excel spreadsheets to concatenate
 
 ### NLP_Functions
-The only function designed for use is Run_Analysis
+The only function designed for use is Run_Analysis.
 
 #### Run_Analysis
 Analyzes a set of reviews scraped off of TripAdvisor using the Scrape_Data module. Returns the k most important sentences in the entire review set from p clusters. This methodology follows from the review article mentioned above.
