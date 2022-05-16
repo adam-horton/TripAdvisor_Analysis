@@ -6,20 +6,6 @@ from nltk.tag import pos_tag
 from sentence_transformers import SentenceTransformer, util
 from sklearn_extra.cluster import KMedoids
 
-def drop_extra_data(df):
-    drop_labels = ['Author_Contributions_All_Time',
-                   'Author_Helpful_Votes_All_Time',
-                   'Review_Helpful_Votes',
-                   'Legroom',
-                   'In-flight_Entertainment',
-                   'Value_for_money',
-                   'Check-in_and_boarding',
-                   'Seat_comfort',
-                   'Customer_service',
-                   'Cleanliness',
-                   'Food_and_Beverage']
-    df.drop(columns=drop_labels, inplace = True)
-
 #Helper function to calculate Sentence Importance Scores
 def RCA_CH_CR(filename, num_reviews): 
     df = pd.read_excel(filename, nrows = num_reviews, usecols = 'B:R')
@@ -93,8 +79,6 @@ def SI(data_set, review_count, W1, W2, W3):
                          'not withstanding']
     
     df = RCA_CH_CR(data_set, review_count)
-
-    drop_extra_data(df)
 
     max_num_words = 0
     
@@ -249,7 +233,5 @@ def Run_Analysis(data_set, num_reviews, num_clusters, sentences_per_cluster=1, W
 
     if excel:
         df.to_excel('K-Medoids_Analysis.xlsx')
-
-    print(df)
 
     return df
